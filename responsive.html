@@ -14,26 +14,12 @@ Description : Responsive Layouts.
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<a href="/Users/aroush/381lab4-2/menu.css">menu.css</a>
+	<link rel="stylesheet" href="menu.css">
 	<!-- First, link the menu.css file here -->
 
 	<style>	
 		/* Remove borders at the end, they have been add just for detecting positions of items*/	
-		div {
-			border: 1px dashed gray;	
-		}
-		.row{ 
-			border: 1px solid red;			
-		}
-		.large {
-			border: 1px solid blue;	
-		}
-		.medium {
-			border: 1px solid green;	
-		}
-		.small {
-			border: 1px solid yellow;	
-		}		
+			
 	</style>
 
     <style>
@@ -45,34 +31,33 @@ Description : Responsive Layouts.
         .footer { position: fixed; bottom: 0; width: 100%;}
         .news-item { padding: 10px; }
 		
-		.row { 
-			/*I need some CSS codes.*/	
+		.row{
+			display: block;
+			box-sizing:border-box;
 		
 		}
 
 		.large, .medium, .small {
-			.menu{
-				display: block
-				background-color: white
-			}
+			box-sizing:border-box;
+			float: left;
 		}
 		
 		.gap {
-			margin-bottom:50px
+			clear:both;
+			height: 55px;
+			width: 100%;
 		}
 
 		@media screen and (min-width: 769px) {			
 			.large { 
 				width: 100%;
-				width: 100%;
 			}
 			.medium { 
-				width: 70%;
 				width: 70%;
 			}
 			.small { 
 				width: 30%;
-			 }
+			}
 		}
 
         @media screen and (max-width: 768px) {
@@ -86,32 +71,38 @@ Description : Responsive Layouts.
 				width: 40%;
 			}
 			.menu{
-				display: block;
 				width: 100%;
+				float: none; /*reset float*/
 			}
 			.main{
-				width:100
+				margin-left: 0px;
 			}
+
+			
         }
 
         @media screen and (max-width: 480px) {
 			.large, .medium, .small{
 				width: 100%;
+				float: none;
 			}
 			.menu{
 				width: 100%;
-			}
-			.menu{
-				display:block;
-				width: 100%;
+				float: none;
 			}
 			.news-item header h1 { font-size: 18px; }
+
 			.main{
 				width:100%;
+				float: none;
+			}
+			.main{
+				margin-left: 0px;
 			}
         }
 
-        
+
+	
     </style>
 </head>
 <body>

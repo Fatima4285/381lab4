@@ -16,7 +16,6 @@
 }
 
 .menu ul li a {
-    background-color: grey;
     display: block; /* Makes the entire area of the list item clickable */
     padding: 10px; /* Adds some padding for better appearance */
     text-decoration: none; /* Removes the underline from the links */

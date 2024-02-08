@@ -16,10 +16,10 @@ Description : Flex Layouts.
 		This tag is essential for responsive design as it tells the browser how to control the page's dimensions and scaling.
 	-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
 
 	<style>	
 		/* Remove borders at the end, they have been add just for detecting positions of items*/	
+		/*
 		div {
 			border: 1px dashed gray;	
 		}
@@ -34,12 +34,13 @@ Description : Flex Layouts.
 		}
 		.small {
 			border: 1px solid yellow;	
-		}		
+		}	
+		*/	
 	</style>
 
 	<style>
 		/* CSS for menu. You don't need to touch this part */
-		.menu { background-color: #e6e6e6; }
+		.menu { background-color: #e6e6e6; flex-direction: column; }
         .menu ul {
             list-style-type: none;
             margin: 0;
@@ -68,58 +69,75 @@ Description : Flex Layouts.
 		}
         body { margin: 0; padding: 0; }
         img { max-width: 100%; height: auto; }
+
         .container { 
 			display: flex;
 			flex-direction: column;
-			/*I need some CSS codes.*/
 		 }
+
         .header, .footer { background-color: #f2f2f2; text-align: center; padding: 10px; width: 100%;}
+		
 		.body { 
-			margin: 10px;
-			padding: 10px;
-			/*I need some CSS codes.*/
+			display: flex;
+			flex-direction: row;
 		}
-        .main {
-			flex: 1;
+
+
+        .main { 
 			padding: 15px; 
-			/*I need some CSS codes.*/
+			display: flex;
+			flex-direction: column;
+			flex: 1;
 		}
         
         .news-item { padding: 10px; }
-        .main .row { 
+
+        .row { 
 			display: flex;
-			flex-direction: vertical;
 			flex-wrap: wrap;
-			justify-content: space-between;
-			/*I need some CSS codes.*/
+			width: 100%;
 		}
         
 
         @media screen and (min-width: 769px) {
-            .menu { width: 150px; }     
+            .menu { width: 100px; }     
 			.large { 
-				width:max-content
-				/*I need some CSS codes.*/
+				width: 100%;
 			}
 			.medium { 
-				/*I need some CSS codes.*/
+				width: 70%
 			}
 			.small { 
-				/*I need some CSS codes.*/
+				width: 30%
 			 }       
         }
 
         @media screen and (max-width: 768px) {
-			.body { 
+			.body {
+				display: flex;
 				flex-direction: column;
-				/*I need some CSS codes.*/
+			}
+
+			.menu {
+				display: flex;
+				flex-direction: column;
 			}
             .menu ul { 
+				display: flex;
 				flex-direction: row;
-				justify-content: space-around;
-				/*I need some CSS codes.*/
-			 }            
-            /*I need some CSS codes.*/
+			 }
+
+			 .small {
+				width: 40%;
+			 }
+
+			 .medium {
+				width: 60%;
+			 }
+
+			 .large {
+				width: 100%;
+			 }
         }
 
         @media screen and (max-width: 480px) {
@@ -132,7 +150,7 @@ Description : Flex Layouts.
 </head>
 <body>
     <div class="container">
-        <div class="header">Header</div>
+        <div class="header">Aroush & Fatima</div>
 		<div class="body">
 			<div class="menu">
 				<ul>
